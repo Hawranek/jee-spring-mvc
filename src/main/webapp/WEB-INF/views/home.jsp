@@ -9,6 +9,12 @@
 <html>
 <head>
     <title>home</title>
+    <style>
+        body{
+            background-color: ${backgroundColor};
+            color: ${fontColor};
+        }
+    </style>
 </head>
 <body>
 welcome from jsp
