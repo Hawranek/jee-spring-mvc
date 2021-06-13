@@ -29,10 +29,7 @@ public class CartController {
     public String addtocart(@RequestParam(defaultValue = "-1") int id, @RequestParam(defaultValue = "1") int quantity) {
 //        Random rand = new Random();
         if (id >= 0 && id < productDao.getProducts().size()) {
-            if (cart.getItems().size() == 0) {
-                cart.addToCart(new CartItem(quantity, productDao.getProducts().get(id)));
-                return "Added to cart";
-            } else {
+            if (cart.getItems().size() != 0) {
 
                 for (CartItem item : cart.getItems()) {
                     if (item.getProduct().equals(productDao.getProducts().get(id))) {
@@ -40,9 +37,9 @@ public class CartController {
                         return "Added to cart";
                     }
                 }
-                cart.addToCart(new CartItem(quantity, productDao.getProducts().get(id)));
-                return "Added to cart";
             }
+            cart.addToCart(new CartItem(quantity, productDao.getProducts().get(id)));
+            return "Added to cart";
         } else {
             return "No such product available";
         }
