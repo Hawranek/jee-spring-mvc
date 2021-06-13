@@ -14,13 +14,14 @@
 </head>
 <body>
 <h4>Tabliczka mnożenia</h4>
-<%--<tbody>--%>
-<%--<c:forEach var="i" begin="0" end="${size}">--%>
-<%--    <tr>--%>
-<%--            ${i}--%>
-<%--    </tr>--%>
-<%--</c:forEach>--%>
-<%--</tbody>--%>
-<%--<h5>Parametr size: ${size} </h5>--%>
+<table border="1">
+    <c:forEach begin="1" end="${size}" var="i">
+        <tr>
+            <c:forEach begin="1" end="${size}" var="j">
+                <td>${i*j}</td>
+            </c:forEach>
+        </tr>
+    </c:forEach>
+</table>
 </body>
 </html>
