@@ -3,13 +3,12 @@ package pl.coderslab.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
-public class HomeController {
-    @GetMapping("")
-    @ResponseBody
-    public String home(){
-        return "<h1>Welcome home!</h1>";
+@RequestMapping("/example")
+public class ExampleController {
+    @GetMapping("/home")
+    public String homeJsp() {
+        return "/home.jsp";
     }
 }
